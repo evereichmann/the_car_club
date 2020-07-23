@@ -1,0 +1,19 @@
+<div class="head">
+    <h1>SHOW FLOOR</h1>
+    </div>
+        <br/>
+        <div class="button">
+        <%= button_to "NEW CAR", {:action => "new"}, :method => "get" %>
+            </div>
+            <div class="index-container container">
+                <% @cars.each do |car| %>
+                    <div class="index-img">
+                    <%= link_to image_tag(car.img_url), car_path(car) %>
+                    </div>
+                        <div class="index-tile">
+                        <h4><%= car.make%> <%= car.model%></h4> 
+                        </div>       
+                <% end %>
+            </div>    
+       
+    

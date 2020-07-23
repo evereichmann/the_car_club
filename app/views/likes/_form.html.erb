@@ -1,0 +1,7 @@
+<%= form_for @like do |f| %>
+<%= f.label :car_id%>
+<%= f.collection_select :car_id, @car , :id, :make || :model %>
+<%= f.label :fan_id%>
+<%= f.collection_select :fan_id, @fan , :id, :name %>
+<%= f.submit %>
+<% end %>

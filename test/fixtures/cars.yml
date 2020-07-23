@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manufacture: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  drive_type: MyString
+  car_options: MyString
+
+two:
+  manufacture: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  drive_type: MyString
+  car_options: MyString

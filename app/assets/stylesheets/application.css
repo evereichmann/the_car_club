@@ -1,0 +1,45 @@
+.head {
+    font-family: courier;
+    font-size: 30px;
+    background-color: darkgrey;
+    border: 5px solid rgb(128, 128, 128);
+}
+  
+  .index-img {
+    max-width: 150px;
+    vertical-align: middle;
+  }
+  
+  .show-img {
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 5px solid rgb(128, 128, 128);
+    padding: 30px;
+    border-radius: 25px;
+  }
+  
+  .container {
+    border-radius: 25px;
+    max-width: 90%;
+    margin: 0px auto;
+    padding: 20px;
+    height: 150vh;
+  }
+  
+  .index-container {
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  }
+  
+  .index-tile {
+    border: 5px solid rgb(128, 128, 128);
+    border-radius: 25px;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 20%;
+  }
+  
+

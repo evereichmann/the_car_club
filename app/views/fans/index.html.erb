@@ -1,0 +1,7 @@
+<h1>All the Fans</h1>
+<%= button_to "NEW FAN", {:action => "new"}, :method => "get" %>
+<br/>
+<% @fans.each do |fan| %>
+<%= link_to image_tag( fan.img_url), fan_path(fan) %>
+<p><%= fan.name %></p>
+<% end %>

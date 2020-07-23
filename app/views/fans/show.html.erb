@@ -1,0 +1,12 @@
+<img src="<%= @fan.img_url %>" alt="<%= @fan.name %>" %/>
+<h1><%= @fan.name %></h1>
+<h5><%= @fan.age %></h5>
+<h5><%= @fan.city %>, <%= @fan.state %></h5>
+<h4>My Favorite Cars</h4>
+<% @fan.cars.each do |car|%>
+<%= link_to image_tag(car.img_url, size: "150x150"), car_path(car) %>
+<p><%= car.make%> <%= car.model%></p>
+<% end %>
+<%= button_to "FAN PAGE", {:action => "index"}, :method => "get"%>
+<%= button_to "EDIT", {:action => "edit"}, :method => "get"%>
+<%= button_to "DELETE", fan_path(@fan), :method => "delete", data:{confirm: 'Are you sure? It will be gone forever!' } %>

@@ -1,0 +1,23 @@
+<div class="head">
+    <h1><%= @car.make %> <%= @car.model %></h1>
+    </div>
+    <br/>
+    <div class="show-img">
+    <img src="<%= @car.img_url %>" alt="<%= @car.make%>"/>
+    </div>
+<ul>
+    <li><%= @car.manufacture %></li>
+    <li><%= @car.color %></li>
+    <li><%= @car.drive_type %></li>
+    <li><%= @car.car_options%></li>
+</ul>
+<h3>Who Likes This Car</h3>
+<ul>
+<% @car.fans.each do |fan| %>
+<%= link_to image_tag(fan.img_url), fan_path(fan) %>
+<li><%= link_to fan.name, fan_path(fan) %></li>
+<% end %>
+</ul>
+<%= button_to "SHOW FLOOR", {:action => "index"}, :method => "get" %>
+<%= button_to "EDIT", {:action => "edit"}, :method => "get" %>
+<%= button_to "DELETE THIS CAR", car_path(@car), method: :delete, data: { confirm: 'Are you sure? It will be gone forever!' }%>

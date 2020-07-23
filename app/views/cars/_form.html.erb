@@ -1,0 +1,17 @@
+<%= form_for @car do |f| %>
+<%= f.label :manufacture%>
+<%= f.collection_select :manufacture, @cars, :manufacture, :manufacture %>
+<%= f.label :make %>
+<%= f.text_field :make %>
+<%= f.label :model %>
+<%= f.text_field :model%><br/><br/>
+<%= f.label :color %>
+<%= f.text_field :color %>
+<%= f.label :drive_type %>
+<%= f.text_field :drive_type %>
+<%= f.label :car_options%>
+<%= f.text_area :car_options%><br/><br/><br/>
+<%= f.label :img_url%>
+<%= f.text_field :img_url%>
+<%= f.submit%>
+<% end %>
