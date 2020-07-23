@@ -14,7 +14,12 @@ end
 #create
 def create
     @fan= Fan.create(fan_params)
-    redirect_to fan_path(@fan)
+    if @fan.valid?
+        redirect_to fan_path(@fan)
+    else  
+        flash[:my_errors] = @fan.errors.full_messages
+        redirect_to new_fan_path
+    end    
 end    
 #edit
 def edit
@@ -23,8 +28,12 @@ end
 #update
 def update
     @fan = Fan.find(params[:id])
-    @fan.update(fan_params)
+    if @fan.update(fan_params)
     redirect_to fan_path(@fan)
+    else 
+        flash[:my_errors] = @fan.errors.full_messages
+        redirect_to edit_fan_path 
+    end    
 end    
 #delete
 def destroy

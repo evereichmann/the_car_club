@@ -1,3 +1,8 @@
+<% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+        <p><%= error %></p>
+    <% end %> 
+<% end %>         
 <%= form_for @car do |f| %>
 <%= f.label :manufacture%>
 <%= f.collection_select :manufacture, @cars, :manufacture, :manufacture %>

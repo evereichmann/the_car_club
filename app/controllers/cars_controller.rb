@@ -15,7 +15,12 @@ class CarsController < ApplicationController
 
     def create
         @car = Car.create(car_params)
-        redirect_to car_path(@car)
+        if @car.valid?
+            redirect_to car_path(@car)
+        else  
+            flash[:my_errors] = @car.errors.full_messages
+            redirect_to new_car_path
+        end    
     end 
     
     def edit
@@ -25,8 +30,12 @@ class CarsController < ApplicationController
     
     def update
         @car = Car.find(params[:id])
-        @car.update(car_params)
+        if @car.update(car_params)
         redirect_to car_path(@car)
+        else  
+            flash[:my_errors] = @car.errors.full_messages
+            redirect_to edit_car_path
+        end    
     end    
 #destroy
     def destroy
